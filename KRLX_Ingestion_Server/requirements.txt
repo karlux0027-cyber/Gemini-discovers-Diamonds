@@ -1,0 +1,17 @@
+# KRLX Sovereign Ingestion Layer — Dependencies
+# Install with: pip install -r requirements.txt
+
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+faster-whisper>=1.1.0
+piper-tts>=2023.11.14
+
+# faster-whisper pulls in:
+#   - ctranslate2 (CUDA inference engine)
+#   - huggingface_hub (model download)
+#   - tokenizers
+#
+# CUDA requirement: You need CUDA 12.x + cuDNN 9.x installed.
+# RTX 5090 (Blackwell) requires CUDA 12.6+ and driver 565+.
+# Verify with: nvidia-smi
